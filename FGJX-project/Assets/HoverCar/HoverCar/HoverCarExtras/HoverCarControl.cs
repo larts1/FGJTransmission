@@ -25,7 +25,7 @@ public class HoverCarControl : MonoBehaviour
 	//Current Turn Rotation
   public GameObject LeftBreak;
 	//Break Left GameObject
-  public GameObject RightBreak;
+  //public GameObject RightBreak;
 	//Break Right GameObject
 
   int m_layerMask;
@@ -80,7 +80,7 @@ public class HoverCarControl : MonoBehaviour
     // Turning
     CurrentTurnAngle = 0.0f;
     float turnAxis = Input.GetAxis("Horizontal");
-    if ( m_currThrust > 0 && Mathf.Abs(turnAxis) > m_deadZone)
+    if ( Mathf.Abs(turnAxis) > m_deadZone)
       CurrentTurnAngle = turnAxis;
   }
 

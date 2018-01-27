@@ -929,7 +929,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 610917221}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.52, y: 1.4062285, z: 7.6}
+  m_LocalPosition: {x: -1.52, y: 0.39, z: 7.6}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1900556454}
@@ -1647,7 +1647,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1322576685}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.97, y: 1.4062285, z: -11.76}
+  m_LocalPosition: {x: 2.97, y: 2.72, z: -7.29}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1900556454}
@@ -1734,7 +1734,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1447799491}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.75, y: 1.406229, z: 8.72}
+  m_LocalPosition: {x: 4.75, y: 0.3900013, z: 8.72}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1900556454}
@@ -2000,7 +2000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_hoverForce: 1000
-  m_StabilizedHoverHeight: 3
+  m_StabilizedHoverHeight: 5
   HoverPointsGameObjects:
   - {fileID: 610917221}
   - {fileID: 1447799491}
@@ -2010,7 +2010,6 @@ MonoBehaviour:
   m_backwardAcl: 5000
   m_turnStrength: 20000
   LeftBreak: {fileID: 571083588}
-  RightBreak: {fileID: 521595780}
 --- !u!54 &1635886722
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2022,7 +2021,7 @@ Rigidbody:
   m_Mass: 70
   m_Drag: 3
   m_AngularDrag: 4
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -2099,7 +2098,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1714840504}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.56, y: 1.4062285, z: -11.38}
+  m_LocalPosition: {x: -2.56, y: 2.7200007, z: -6.91}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1900556454}
