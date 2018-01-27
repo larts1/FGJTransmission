@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class EffectManager : MonoBehaviour {
 
-    public EffectManager i;
+    public static EffectManager i;
 
     public List<BoostEffect> Effects = new List<BoostEffect>();
-
+    public List<BoostEffect> PickUpEffects = new List<BoostEffect>();
     public int randomInterval = 10;
 
     public BoostEffect CurrentEffect = null;
@@ -48,6 +48,11 @@ public class EffectManager : MonoBehaviour {
 
         CurrentEffect = Effects[EffectId];
 
+        CurrentEffect.StartEffect();
+    }
+    public void NextPickUpEffect()
+    {
+        CurrentEffect = PickUpEffects[0];
         CurrentEffect.StartEffect();
     }
 }

@@ -151,6 +151,7 @@ public class HoverCarControl : MonoBehaviour
         if (other.gameObject.CompareTag("PickUpTag"))
         {
             other.gameObject.SetActive(false);
+            EffectManager.i.NextPickUpEffect();
         }
     }
 }
