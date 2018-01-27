@@ -8,13 +8,15 @@ public class EffectManager : MonoBehaviour {
 
     public List<BoostEffect> Effects = new List<BoostEffect>();
 
+    public int randomInterval = 10;
+
     public BoostEffect CurrentEffect = null;
     private void Awake() {
         i = this; //Singleton
     }
 
     private void Start() {
-        InvokeRepeating( "RandomEffect", 15, 15 );    
+        InvokeRepeating( "RandomEffect", randomInterval, randomInterval );    
     }
 
     // Set one effect on

@@ -8,6 +8,8 @@ public class SpeedMultiEffect : BoostEffect {
 
     public float speedMultiplier = 2f;
 
+    public GameObject animation;
+
     public override void EndEffect() {
         Debug.Log( "End" );
 
@@ -18,6 +20,8 @@ public class SpeedMultiEffect : BoostEffect {
         Debug.Log( "Start" );
 
         HoverCarControl.i.m_forwardAcl *= speedMultiplier;
+
+        Instantiate( animation );
 
     }
 }

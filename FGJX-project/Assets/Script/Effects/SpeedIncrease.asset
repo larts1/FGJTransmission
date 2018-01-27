@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Name: SpeedIncrease
   m_EditorClassIdentifier: 
   speedMultiplier: 2
+  animation: {fileID: 1096527962473040, guid: 3a25b8d9962ee6247848a72676e67f20, type: 2}
