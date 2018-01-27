@@ -16,7 +16,7 @@ public class EffectManager : MonoBehaviour {
     }
 
     private void Start() {
-        InvokeRepeating( "RandomEffect", randomInterval, randomInterval );    
+        InvokeRepeating( "NextEffect", randomInterval, randomInterval );    
     }
 
     // Set one effect on
@@ -32,4 +32,22 @@ public class EffectManager : MonoBehaviour {
         CurrentEffect.StartEffect();
     }
 
+    int EffectId = 0;
+    public void NextEffect() {
+
+        if ( CurrentEffect != null ) {
+            CurrentEffect.EndEffect();
+
+            var nextID = Effects.IndexOf( CurrentEffect ) + 1;
+            Debug.Log( nextID );
+            EffectId = nextID == Effects.Count ? 0 : nextID;
+
+        }
+
+
+
+        CurrentEffect = Effects[EffectId];
+
+        CurrentEffect.StartEffect();
+    }
 }
