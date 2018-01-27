@@ -36,6 +36,11 @@ public class HoverCarControl : MonoBehaviour
     //Boost controls
     public ParticleSystem left_boost;
     public ParticleSystem right_boost;
+   
+    //flags
+    private bool flg1 = true;
+
+    Vector3 OldPosition;
 
   int m_layerMask;
 
@@ -121,7 +126,11 @@ public class HoverCarControl : MonoBehaviour
 
   void FixedUpdate()
   {
-
+    if (flg1)
+    {         
+        flg1 = false;
+        StartCoroutine(SavePLayerPosition());
+    }  
     //  Hover Force
     RaycastHit hit;
     for (int i = 0; i < HoverPointsGameObjects.Length; i++)
@@ -169,5 +178,22 @@ public class HoverCarControl : MonoBehaviour
             other.gameObject.SetActive(false);
             EffectManager.i.NextPickUpEffect();
         }
+        else if (other.gameObject.CompareTag("Ground"))
+        {
+            Debug.Log("cba");
+            GameObject.FindGameObjectWithTag("Player").transform.position = OldPosition;
+        }
+
     }
+    IEnumerator SavePLayerPosition()
+    {
+        Vector3 dwn = GameObject.FindGameObjectWithTag("Player").transform.TransformDirection(Vector3.down);
+        if (Physics.Raycast(transform.position, dwn, 10))
+        {
+            OldPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+            yield return new WaitForSeconds(5);
+        }          
+        flg1 = true;
+    }
+
 }
