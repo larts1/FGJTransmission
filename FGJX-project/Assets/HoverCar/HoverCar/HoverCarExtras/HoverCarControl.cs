@@ -17,6 +17,8 @@ public class HoverCarControl : MonoBehaviour
     public float m_turnStrength_P1 = 10f;
     public float m_turnStrength_P2 = 10f;
 
+    public bool AmplifyMode = false;
+
     public static HoverCarControl i;
     #endregion
 
@@ -75,13 +77,28 @@ public class HoverCarControl : MonoBehaviour
       }
     }
   }
-	
+
+    float turnAxis, aclAxis;
   void Update()
   {
 
+        if ( AmplifyMode ) {
+
+            turnAxis = ( ( Input.GetAxis("Horizontal") * m_turnStrength_P1 ) * Mathf.Abs( Input.GetAxis( "Horizontal_P2" ) ) ) 
+                + ( Mathf.Abs( Input.GetAxis( "Horizontal" ) ) * Input.GetAxis( "Horizontal_P2" ) * m_turnStrength_P1 );
+
+            aclAxis = ( Input.GetAxis( "Vertical" ) * m_forwardAcl_P1 ) + ( Input.GetAxis( "Vertical_P2" ) * m_forwardAcl_P2 );
+
+        } else {
+
+            aclAxis = ( Input.GetAxis( "Vertical" ) * m_forwardAcl_P1 ) + ( Input.GetAxis( "Vertical_P2" ) * m_forwardAcl_P2 );
+
+            turnAxis = ( Input.GetAxis("Horizontal") * m_turnStrength_P1 ) + ( Input.GetAxis( "Horizontal_P2" ) * m_turnStrength_P2 );
+
+        }
+
     // Main Thrust
     m_currThrust = 0.0f;
-    float aclAxis = ( Input.GetAxis( "Vertical" ) * m_forwardAcl_P1 ) + ( Input.GetAxis( "Vertical_P2" ) * m_forwardAcl_P2 );
         if (aclAxis > m_deadZone)
         {
             m_currThrust = aclAxis;
@@ -98,7 +115,6 @@ public class HoverCarControl : MonoBehaviour
 
     // Turning
     CurrentTurnAngle = 0.0f;
-    float turnAxis = ( Input.GetAxis("Horizontal") * m_turnStrength_P1 ) + + ( Input.GetAxis( "Horizontal_P2" ) * m_turnStrength_P1 );
     if ( Mathf.Abs(turnAxis) > m_deadZone)
       CurrentTurnAngle = turnAxis;
   }
