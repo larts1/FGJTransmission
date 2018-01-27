@@ -31,6 +31,10 @@ public class HoverCarControl : MonoBehaviour
 	//Height of hover
   public GameObject[] HoverPointsGameObjects;
 
+    //Boost controls
+    public ParticleSystem left_boost;
+    public ParticleSystem right_boost;
+
   int m_layerMask;
 
     private void Awake() {
@@ -78,10 +82,19 @@ public class HoverCarControl : MonoBehaviour
     // Main Thrust
     m_currThrust = 0.0f;
     float aclAxis = ( Input.GetAxis( "Vertical" ) * m_forwardAcl_P1 ) + ( Input.GetAxis( "Vertical_P2" ) * m_forwardAcl_P2 );
-    if ( aclAxis > m_deadZone )
-      m_currThrust = aclAxis;
-    else if ( aclAxis < -m_deadZone )
-      m_currThrust = aclAxis * m_backwardAcc;
+        if (aclAxis > m_deadZone)
+        {
+            m_currThrust = aclAxis;
+            left_boost.Play();
+            right_boost.Play();
+        }
+        else if (aclAxis < -m_deadZone)
+            m_currThrust = aclAxis * m_backwardAcc;
+        else
+        {
+            left_boost.Stop();
+            right_boost.Stop();
+        }
 
     // Turning
     CurrentTurnAngle = 0.0f;
