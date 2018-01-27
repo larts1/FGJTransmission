@@ -5798,6 +5798,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ef2f6d85c3576d64d9ee6c1b2e17c52c, type: 2}
+    - target: {fileID: 100000, guid: e3720f3f6940a2645ae9baa9a57a491a, type: 3}
+      propertyPath: m_Name
+      value: shipRender
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e3720f3f6940a2645ae9baa9a57a491a, type: 3}
   m_IsPrefabParent: 0
