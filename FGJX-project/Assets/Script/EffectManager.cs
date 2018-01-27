@@ -15,7 +15,7 @@ public class EffectManager : MonoBehaviour {
 
     public AudioSource mainAudio;
     private void Awake() {
-        i = this; //Singleton
+        i = this; //Singleton 
     }
 
     private void Start() {
@@ -24,29 +24,38 @@ public class EffectManager : MonoBehaviour {
 
     // Set one effect on
     public void RandomEffect() {
-        int rngEffectId = Random.Range(0,Effects.Count);
+        int rngEffectId = Random.Range(0, Effects.Count);
 
-        if ( Effects.IndexOf( CurrentEffect ) == rngEffectId ) {
-            var nextID = Effects.IndexOf( CurrentEffect ) + 1;
-            rngEffectId = nextID == Effects.Count ? 0 : nextID;
-        }
+        //if ( Effects.IndexOf( CurrentEffect ) == rngEffectId ) {
+        //    var nextID = Effects.IndexOf( CurrentEffect ) + 1;
+        //    rngEffectId = nextID == Effects.Count ? 0 : nextID;
+        //}
 
-        while ( Random.value > Effects[rngEffectId].chance ) {
-            rngEffectId = Random.Range(0,Effects.Count);
+        while ( true ) {
+            rngEffectId = Random.Range( 0, Effects.Count );
 
             if ( Effects.IndexOf( CurrentEffect ) == rngEffectId ) {
                 var nextID = Effects.IndexOf( CurrentEffect ) + 1;
                 rngEffectId = nextID == Effects.Count ? 0 : nextID;
             }
+
+            if ( Random.value < Effects[rngEffectId].chance ) {
+                break;
+            }
         }
 
-        if ( CurrentEffect != null ) {
-            CurrentEffect.EndEffect();
-        }
+            Debug.Log( Effects[rngEffectId].chance );
+
 
         CurrentEffect = Effects[rngEffectId];
 
         CurrentEffect.StartEffect();
+        StartCoroutine( EffectWai( randomInterval / 2 ) );
+    }
+
+    IEnumerator EffectWai( int i ) {
+        yield return new WaitForSeconds( i );
+        CurrentEffect.EndEffect();
     }
 
     int EffectId = 0;

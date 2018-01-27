@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12042edc9b52f384ca0631948699af66, type: 3}
   m_Name: WindowsUpdates
   m_EditorClassIdentifier: 
-  chance: 0.1
+  chance: 0.01
   animation: {fileID: 1549384768628844, guid: f712817955e2bbe4d8b77ad6342b6ad0, type: 2}
