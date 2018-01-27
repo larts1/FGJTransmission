@@ -9,12 +9,13 @@ public class HoverCarControl : MonoBehaviour
     public float m_hoverForce = 9.0f;
 	  //Force of hover
     public float m_StabilizedHoverHeight = 2.0f;
-	    //Points where hover will push down
-    public float m_forwardAcl = 100.0f;
-	    //Foward Acceleation of car
-    public float m_backwardAcl = 25.0f;
-	    //Do not modify! Current speed
-    public float m_turnStrength = 10f;
+    public float m_backwardAcc = 50000f;
+
+    public float m_forwardAcl_P1 = 100.0f;
+    public float m_forwardAcl_P2 = 100.0f;
+
+    public float m_turnStrength_P1 = 10f;
+    public float m_turnStrength_P2 = 10f;
 
     public static HoverCarControl i;
     #endregion
@@ -76,15 +77,15 @@ public class HoverCarControl : MonoBehaviour
 
     // Main Thrust
     m_currThrust = 0.0f;
-    float aclAxis = Input.GetAxis( "Vertical" );
-    if (aclAxis > m_deadZone)
-      m_currThrust = aclAxis * m_forwardAcl;
-    else if (aclAxis < -m_deadZone)
-      m_currThrust = aclAxis * m_backwardAcl;
+    float aclAxis = ( Input.GetAxis( "Vertical" ) * m_forwardAcl_P1 ) + ( Input.GetAxis( "Vertical_P2" ) * m_forwardAcl_P2 );
+    if ( aclAxis > m_deadZone )
+      m_currThrust = aclAxis;
+    else if ( aclAxis < -m_deadZone )
+      m_currThrust = aclAxis * m_backwardAcc;
 
     // Turning
     CurrentTurnAngle = 0.0f;
-    float turnAxis = Input.GetAxis("Horizontal");
+    float turnAxis = ( Input.GetAxis("Horizontal") * m_turnStrength_P1 ) + + ( Input.GetAxis( "Horizontal_P2" ) * m_turnStrength_P1 );
     if ( Mathf.Abs(turnAxis) > m_deadZone)
       CurrentTurnAngle = turnAxis;
   }
@@ -126,10 +127,10 @@ public class HoverCarControl : MonoBehaviour
     // Turn
     if (CurrentTurnAngle > 0)
     {
-      m_body.AddRelativeTorque(Vector3.up * CurrentTurnAngle * m_turnStrength);
+      m_body.AddRelativeTorque(Vector3.up * CurrentTurnAngle );
     } else if (CurrentTurnAngle < 0)
     {
-      m_body.AddRelativeTorque(Vector3.up * CurrentTurnAngle * m_turnStrength);
+      m_body.AddRelativeTorque(Vector3.up * CurrentTurnAngle );
     }
   }
 }
