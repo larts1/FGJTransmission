@@ -10,11 +10,19 @@ public class SpeedMultiEffect : BoostEffect {
 
     public GameObject animation;
 
+    GameObject window;
+
     public override void EndEffect() {
         Debug.Log( "End" );
 		EffectManager.i.MuteMainAudio ();
         HoverCarControl.i.m_forwardAcl_P2 /= speedMultiplier;
         HoverCarControl.i.m_forwardAcl_P1 /= speedMultiplier;
+
+        if ( window != null )
+        {
+            Destroy(window);
+        }
+
     }
 
     public override void StartEffect() {
@@ -23,7 +31,7 @@ public class SpeedMultiEffect : BoostEffect {
         HoverCarControl.i.m_forwardAcl_P2 *= speedMultiplier;
         HoverCarControl.i.m_forwardAcl_P1 *= speedMultiplier;
 
-        Instantiate( animation );
+        window = Instantiate( animation );
 
     }
 }
