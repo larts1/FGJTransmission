@@ -132,4 +132,11 @@ public class HoverCarControl : MonoBehaviour
       m_body.AddRelativeTorque(Vector3.up * CurrentTurnAngle * m_turnStrength);
     }
   }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("PickUpTag"))
+        {
+            other.gameObject.SetActive(false);
+        }
+    }
 }
