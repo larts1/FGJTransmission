@@ -77,7 +77,6 @@ public class HoverCarControl : MonoBehaviour
     // Main Thrust
     m_currThrust = 0.0f;
     float aclAxis = Input.GetAxis( "Vertical" );
-        Debug.Log( aclAxis );
     if (aclAxis > m_deadZone)
       m_currThrust = aclAxis * m_forwardAcl;
     else if (aclAxis < -m_deadZone)
