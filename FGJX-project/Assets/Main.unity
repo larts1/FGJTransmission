@@ -6886,7 +6886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_hoverForce: 1000
   m_StabilizedHoverHeight: 10
-  m_backwardAcc: 50000
+  m_backwardAcc: 0.05
   m_forwardAcl_P1: 50000
   m_forwardAcl_P2: 50000
   m_turnStrength_P1: 120000
