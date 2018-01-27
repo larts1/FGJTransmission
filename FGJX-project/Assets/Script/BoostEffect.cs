@@ -9,4 +9,6 @@ public abstract class BoostEffect : ScriptableObject {
 
     //Removes set effect
     public abstract void EndEffect();
+
+    public float chance = 1f;
 }

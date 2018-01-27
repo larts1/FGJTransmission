@@ -12,17 +12,33 @@ public class EffectManager : MonoBehaviour {
 
     public BoostEffect CurrentEffect = null;
     public BoostEffect CurrentPickupEffect = null;
+
+    public AudioSource mainAudio;
     private void Awake() {
         i = this; //Singleton
     }
 
     private void Start() {
-        InvokeRepeating( "NextEffect", randomInterval, randomInterval );    
+        InvokeRepeating( "RandomEffect", randomInterval, randomInterval );    
     }
 
     // Set one effect on
     public void RandomEffect() {
-        int rngEffectId = Random.Range(0,Effects.Count -1);
+        int rngEffectId = Random.Range(0,Effects.Count);
+
+        if ( Effects.IndexOf( CurrentEffect ) == rngEffectId ) {
+            var nextID = Effects.IndexOf( CurrentEffect ) + 1;
+            rngEffectId = nextID == Effects.Count ? 0 : nextID;
+        }
+
+        while ( Random.value > Effects[rngEffectId].chance ) {
+            rngEffectId = Random.Range(0,Effects.Count);
+
+            if ( Effects.IndexOf( CurrentEffect ) == rngEffectId ) {
+                var nextID = Effects.IndexOf( CurrentEffect ) + 1;
+                rngEffectId = nextID == Effects.Count ? 0 : nextID;
+            }
+        }
 
         if ( CurrentEffect != null ) {
             CurrentEffect.EndEffect();
@@ -62,5 +78,13 @@ public class EffectManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(i);
         CurrentPickupEffect.EndEffect();
+    }
+
+    public void MuteMainAudio() {
+        if ( mainAudio.isPlaying ) {
+            mainAudio.Pause();
+        } else {
+            mainAudio.Play();
+        }
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu( fileName = "WindowsUpdates", menuName = "Effects/WindowsUpdates", order = 1 )]
 public class WindowsUpdatesEffect : BoostEffect {
 
+    public new float chance = 0.3f;
     public GameObject animation;
 
     GameObject window;

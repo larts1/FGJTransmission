@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 [CreateAssetMenu(fileName = "Mirror", menuName = "Effects/Mirror", order =1)]
-public class MirrorEffect : BoostEffect
+public class MirrorEffect : BoostEffect 
 {
     public override void EndEffect()
     {

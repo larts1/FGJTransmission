@@ -7,7 +7,7 @@ public class DestroyOnFire : MonoBehaviour {
     int minTime = 0;
 	// Update is called once per frame
 	void Update () {
-		if ( Input.anyKeyDown && ++minTime > 5 ) {
+		if ( Input.anyKeyDown && ++minTime > 3 ) {
             Destroy( gameObject );
         }
 	}
