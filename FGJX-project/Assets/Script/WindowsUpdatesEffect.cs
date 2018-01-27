@@ -15,7 +15,7 @@ public class WindowsUpdatesEffect : BoostEffect {
     }
 
     public override void StartEffect() {
-		EffectManager.i.MuteMainAudio ();
+        EffectManager.i.MuteMainAudio();
         window = Instantiate( animation );
         window.transform.SetParent( window.transform.Find( "/UI/Canvas/" ), false );
 
