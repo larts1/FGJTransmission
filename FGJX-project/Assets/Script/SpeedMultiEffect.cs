@@ -14,12 +14,14 @@ public class SpeedMultiEffect : BoostEffect {
         Debug.Log( "End" );
 
         HoverCarControl.i.m_forwardAcl_P2 /= speedMultiplier;
+        HoverCarControl.i.m_forwardAcl_P1 /= speedMultiplier;
     }
 
     public override void StartEffect() {
         Debug.Log( "Start" );
 
         HoverCarControl.i.m_forwardAcl_P2 *= speedMultiplier;
+        HoverCarControl.i.m_forwardAcl_P1 *= speedMultiplier;
 
         Instantiate( animation );
 
