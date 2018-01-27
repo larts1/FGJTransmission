@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.056444637, g: 0.5892732, b: 0.85294116, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -5276,7 +5276,7 @@ Prefab:
     - target: {fileID: 114543134613422580, guid: b01d423ead11f8f4b8114b3ba87954bd,
         type: 2}
       propertyPath: Effects.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4988535827014436, guid: b01d423ead11f8f4b8114b3ba87954bd, type: 2}
       propertyPath: m_LocalPosition.x
@@ -7377,6 +7377,7 @@ GameObject:
   - component: {fileID: 1642303674}
   - component: {fileID: 1642303676}
   - component: {fileID: 1642303675}
+  - component: {fileID: 1642303677}
   m_Layer: 5
   m_Name: timer
   m_TagString: Untagged
@@ -7397,10 +7398,10 @@ RectTransform:
   m_Father: {fileID: 671042748}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 150, y: -40}
-  m_SizeDelta: {x: 200, y: 60}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -153.2, y: 55.8}
+  m_SizeDelta: {x: 256.2, y: 111.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1642303675
 MonoBehaviour:
@@ -7414,7 +7415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5661765, g: 0.5661765, b: 0.5661765, a: 1}
+  m_Color: {r: 1, g: 0.7803922, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7422,13 +7423,13 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: e4c2fd14a51de62499174cf52037fc56, type: 3}
+    m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 59
-    m_Alignment: 0
+    m_MaxSize: 70
+    m_Alignment: 7
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -7441,6 +7442,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1642303673}
+--- !u!114 &1642303677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1642303673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.8000001, g: 0.1137255, b: 0.13725491, a: 0.5}
+  m_EffectDistance: {x: 1, y: 1}
+  m_UseGraphicAlpha: 1
 --- !u!1001 &1656465710
 Prefab:
   m_ObjectHideFlags: 0
