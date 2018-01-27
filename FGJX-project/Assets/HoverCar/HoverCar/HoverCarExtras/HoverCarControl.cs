@@ -7,7 +7,7 @@ public class HoverCarControl : MonoBehaviour
 
     #region Public variables
     public float m_hoverForce = 9.0f;
-	  //Force of hover
+    //Force of hover
     public float m_StabilizedHoverHeight = 2.0f;
     public float m_backwardAcc = 50000f;
 
@@ -24,21 +24,23 @@ public class HoverCarControl : MonoBehaviour
 
     //Strength of the turn
     float CurrentTurnAngle = 0.0f;
-	//Backwords/reverse Acceleration of car
-  float m_currThrust = 0.0f;
+    //Backwords/reverse Acceleration of car
+    float m_currThrust = 0.0f;
 
-  Rigidbody m_body;
-  float m_deadZone = 0.1f;
+    Rigidbody m_body;
+    float m_deadZone = 0.1f;
 
-	//Height of hover
-  public GameObject[] HoverPointsGameObjects;
+    //Height of hover
+    public GameObject[] HoverPointsGameObjects;
 
     //Boost controls
     public ParticleSystem left_boost;
     public ParticleSystem right_boost;
-   
+
     //flags
     private bool flg1 = true;
+
+    int[] ChkPoints = {0, 0, 0};
 
     Vector3 OldPosition;
 
@@ -183,7 +185,34 @@ public class HoverCarControl : MonoBehaviour
             Debug.Log("cba");
             GameObject.FindGameObjectWithTag("Player").transform.position = OldPosition;
         }
+        else if (other.gameObject.CompareTag("CheckPoint"))
+        {
+            
+            switch(other.gameObject.name)
+            {
+                case "CheckPoint1":
+                    ChkPoints[0] = 1;
+                    break;
+                case "CheckPoint2":
+                   if(ChkPoints[0]==1)
+                       ChkPoints[1] = 1;
+                    break;
+                case "CheckPoint3":
+                    if (ChkPoints[0] == 1 && ChkPoints[1] == 1)
+                        WinTxt();
+                    break;    
+            } 
 
+            foreach(int i in ChkPoints)
+            {
+                Debug.Log("Chk!"+i);
+            }
+        } 
+
+    }
+    private void WinTxt()
+    {
+        Debug.Log("YouWon!");
     }
     IEnumerator SavePLayerPosition()
     {
