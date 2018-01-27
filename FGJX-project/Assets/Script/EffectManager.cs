@@ -53,7 +53,14 @@ public class EffectManager : MonoBehaviour {
     }
     public void NextPickUpEffect()
     {
-        CurrentPickupEffect = PickUpEffects[0];
+        int pickUpCount = Random.Range(0, PickUpEffects.Count - 1);
+        CurrentPickupEffect = PickUpEffects[pickUpCount];
         CurrentPickupEffect.StartEffect();
+        StartCoroutine(PickUpEffectWai(5));
+    }
+    IEnumerator PickUpEffectWai(int i)
+    {
+        yield return new WaitForSeconds(i);
+        CurrentPickupEffect.EndEffect();
     }
 }

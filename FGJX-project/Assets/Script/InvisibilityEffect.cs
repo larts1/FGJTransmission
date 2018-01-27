@@ -9,6 +9,7 @@ public class InvisibilityEffect : BoostEffect
     public override void EndEffect()
     {
         Debug.Log("End invisibility");
+        shipRender = GameObject.Find("shipRender");
         shipRender.gameObject.GetComponent<Renderer>().enabled = true;
     }
     public override void StartEffect()
