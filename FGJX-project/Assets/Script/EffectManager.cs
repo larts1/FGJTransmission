@@ -11,6 +11,7 @@ public class EffectManager : MonoBehaviour {
     public int randomInterval = 10;
 
     public BoostEffect CurrentEffect = null;
+    public BoostEffect CurrentPickupEffect = null;
     private void Awake() {
         i = this; //Singleton
     }
@@ -52,7 +53,7 @@ public class EffectManager : MonoBehaviour {
     }
     public void NextPickUpEffect()
     {
-        CurrentEffect = PickUpEffects[0];
-        CurrentEffect.StartEffect();
+        CurrentPickupEffect = PickUpEffects[0];
+        CurrentPickupEffect.StartEffect();
     }
 }
