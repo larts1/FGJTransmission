@@ -4,33 +4,39 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody))]
 public class HoverCarControl : MonoBehaviour
 {
+
+    #region Public variables
+    public float m_hoverForce = 9.0f;
+	  //Force of hover
+    public float m_StabilizedHoverHeight = 2.0f;
+	    //Points where hover will push down
+    public float m_forwardAcl = 100.0f;
+	    //Foward Acceleation of car
+    public float m_backwardAcl = 25.0f;
+	    //Do not modify! Current speed
+    public float m_turnStrength = 10f;
+
+    public static HoverCarControl i;
+    #endregion
+
+    //Strength of the turn
+    float CurrentTurnAngle = 0.0f;
+	//Backwords/reverse Acceleration of car
+  float m_currThrust = 0.0f;
+
   Rigidbody m_body;
   float m_deadZone = 0.1f;
 
-  public float m_hoverForce = 9.0f;
-	//Force of hover
-  public float m_StabilizedHoverHeight = 2.0f;
 	//Height of hover
   public GameObject[] HoverPointsGameObjects;
-	//Points where hover will push down
-  public float m_forwardAcl = 100.0f;
-	//Foward Acceleation of car
-  public float m_backwardAcl = 25.0f;
-	//Backwords/reverse Acceleration of car
-  float m_currThrust = 0.0f;
-	//Do not modify! Current speed
-  public float m_turnStrength = 10f;
-	//Strength of the turn
-  float CurrentTurnAngle = 0.0f;
-	//Current Turn Rotation
-  public GameObject LeftBreak;
-	//Break Left GameObject
-  //public GameObject RightBreak;
-	//Break Right GameObject
 
   int m_layerMask;
 
-  void Start()
+    private void Awake() {
+        i = this; //Set singleton
+    }
+
+    void Start()
   {
     m_body = GetComponent<Rigidbody>();
 
