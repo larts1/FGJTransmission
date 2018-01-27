@@ -9,12 +9,13 @@ public class WindowsUpdatesEffect : BoostEffect {
 
     GameObject window;
     public override void EndEffect() {
+		EffectManager.i.MuteMainAudio ();
         if ( window != null )
             Destroy( window );
     }
 
     public override void StartEffect() {
-
+		EffectManager.i.MuteMainAudio ();
         window = Instantiate( animation );
         window.transform.SetParent( window.transform.Find( "/UI/Canvas/" ), false );
 
