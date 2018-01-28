@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 114724757281553272}
   - component: {fileID: 111275796459546274}
   - component: {fileID: 114851435926349830}
+  - component: {fileID: 114641378132109358}
   m_Layer: 0
   m_Name: RotaTupNOTIFICATION
   m_TagString: Untagged
@@ -122,6 +123,17 @@ MonoBehaviour:
   m_EffectColor: {r: 0.9843138, g: 0.16470589, b: 0.16078432, a: 0.5}
   m_EffectDistance: {x: 1, y: 1}
   m_UseGraphicAlpha: 1
+--- !u!114 &114641378132109358
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1205305211369564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2273336162dbd1a4088a08929f940747, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114724757281553272
 MonoBehaviour:
   m_ObjectHideFlags: 1

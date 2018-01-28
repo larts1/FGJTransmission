@@ -5,14 +5,20 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Mirror", menuName = "Effects/Mirror", order =1)]
 public class MirrorEffect : BoostEffect 
 {
+
+    public GameObject Notification;
+
+    GameObject win;
     public override void EndEffect()
     {
-        Debug.Log("End mirror effect");
+        if ( win != null ) {
+            Destroy( win );
+        }
         Camera.main.transform.eulerAngles = new Vector3(73, 0, 0);
     }
     public override void StartEffect()
     {
-        Debug.Log("Start mirror effect");
+        win = Instantiate( Notification );
         Camera.main.transform.eulerAngles = new Vector3(73, 180, 0);
     }
 }
