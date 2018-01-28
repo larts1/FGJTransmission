@@ -6389,11 +6389,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114543134613422580, guid: b01d423ead11f8f4b8114b3ba87954bd,
-        type: 2}
-      propertyPath: Effects.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4988535827014436, guid: b01d423ead11f8f4b8114b3ba87954bd, type: 2}
       propertyPath: m_LocalPosition.x
       value: -84.13031
@@ -6428,11 +6423,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114543134613422580, guid: b01d423ead11f8f4b8114b3ba87954bd,
         type: 2}
-      propertyPath: mainAudio
-      value: 
-      objectReference: {fileID: 988844840}
-    - target: {fileID: 114543134613422580, guid: b01d423ead11f8f4b8114b3ba87954bd,
-        type: 2}
       propertyPath: P1Kaasu
       value: 
       objectReference: {fileID: 1777697126}
@@ -6451,41 +6441,6 @@ Prefab:
       propertyPath: P2Turn
       value: 
       objectReference: {fileID: 545297103}
-    - target: {fileID: 114543134613422580, guid: b01d423ead11f8f4b8114b3ba87954bd,
-        type: 2}
-      propertyPath: Effects.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: f8cd5348cf83add4b846ea600b6588dc,
-        type: 2}
-    - target: {fileID: 114543134613422580, guid: b01d423ead11f8f4b8114b3ba87954bd,
-        type: 2}
-      propertyPath: Effects.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 4c6cde279e5bfd64d99fb906f285e67e,
-        type: 2}
-    - target: {fileID: 114543134613422580, guid: b01d423ead11f8f4b8114b3ba87954bd,
-        type: 2}
-      propertyPath: Effects.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: 4dbaa41647568624cb166d87dff2f049,
-        type: 2}
-    - target: {fileID: 114543134613422580, guid: b01d423ead11f8f4b8114b3ba87954bd,
-        type: 2}
-      propertyPath: Effects.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: e5a69bc54b0b125408eb0557bed1804b,
-        type: 2}
-    - target: {fileID: 114543134613422580, guid: b01d423ead11f8f4b8114b3ba87954bd,
-        type: 2}
-      propertyPath: Effects.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 4dbaa41647568624cb166d87dff2f049,
-        type: 2}
-    - target: {fileID: 114543134613422580, guid: b01d423ead11f8f4b8114b3ba87954bd,
-        type: 2}
-      propertyPath: randomInterval
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b01d423ead11f8f4b8114b3ba87954bd, type: 2}
   m_IsPrefabParent: 0
