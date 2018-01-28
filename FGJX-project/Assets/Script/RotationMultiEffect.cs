@@ -11,14 +11,12 @@ public class RotationMultiEffect : BoostEffect {
     public GameObject animation;
 
     public override void EndEffect() {
-        Debug.Log( "End" );
 
         HoverCarControl.i.m_turnStrength_P2 /= speedMultiplier;
         HoverCarControl.i.m_turnStrength_P1 /= speedMultiplier;
     }
 
     public override void StartEffect() {
-        Debug.Log( "Start" );
 
         HoverCarControl.i.m_turnStrength_P2 *= speedMultiplier;
         HoverCarControl.i.m_turnStrength_P1 *= speedMultiplier;

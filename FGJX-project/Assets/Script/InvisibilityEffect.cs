@@ -5,17 +5,25 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Invisibility", menuName = "Effects/Invisibility", order = 1)]
 public class InvisibilityEffect : BoostEffect
 {
+    public GameObject Notification;
+
+    GameObject win;
     GameObject shipRender;
     public override void EndEffect()
     {
-        Debug.Log("End invisibility");
         shipRender = GameObject.Find("shipRender");
         shipRender.gameObject.GetComponent<Renderer>().enabled = true;
+
+        if ( win != null ) {
+            Destroy( win );
+        }
+
     }
     public override void StartEffect()
     {
-        Debug.Log("Start invisibility");
         shipRender = GameObject.Find("shipRender");
         shipRender.gameObject.GetComponent<Renderer>().enabled = false;
+
+        win = Instantiate( Notification );
     }
 }
