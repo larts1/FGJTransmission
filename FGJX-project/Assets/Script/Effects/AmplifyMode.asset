@@ -11,5 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f40058583392149a742b86d658a694, type: 3}
   m_Name: AmplifyMode
   m_EditorClassIdentifier: 
+  chance: 1
   speedMultiplier: 2
-  animation: {fileID: 1096527962473040, guid: 3a25b8d9962ee6247848a72676e67f20, type: 2}
+  animation: {fileID: 1838020554755140, guid: aaeaba6dd2fe84f4d917469edf3cc69b, type: 2}
