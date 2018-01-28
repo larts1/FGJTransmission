@@ -95,7 +95,7 @@ public class EffectManager : MonoBehaviour {
     }
 
     void StartDistortion() {
-        FindObjectOfType<AlpacaSound.RetroPixel>().horizontalResolution = 640 / ( 3 - iter++ );
+        FindObjectOfType<AlpacaSound.RetroPixel>().horizontalResolution = 640 / ( 30 - ( 10 * iter++ ) );
         if ( iter == 3 ) {
             Invoke( "StopDistortion", 0.5f );
             iter = 0;
