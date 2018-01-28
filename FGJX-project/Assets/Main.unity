@@ -8543,7 +8543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b4d62c4386d46f4b9d6db8a6d3081c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_hoverForce: 1000
+  m_hoverForce: 2300
   m_StabilizedHoverHeight: 10
   m_backwardAcc: 0.05
   m_forwardAcl_P1: 50000
