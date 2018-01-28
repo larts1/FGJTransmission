@@ -11,17 +11,25 @@ public class DisableButtonEffect : BoostEffect {
             if ( player == 0 ) {
                 HoverCarControl.i.m_forwardAcl_P1 = oldValue;
                 HoverCarControl.i.m_turnStrength_P2 = oldValue2;
+                EffectManager.i.SetButton( true, true, true );
+                EffectManager.i.SetButton( false, false, true );
             } else {
                 HoverCarControl.i.m_forwardAcl_P2 = oldValue;
                 HoverCarControl.i.m_turnStrength_P1 = oldValue2;
+                EffectManager.i.SetButton( false, true, true );
+                EffectManager.i.SetButton( true, false, true );
             }
         } else {
             if ( player == 0 ) {
                 HoverCarControl.i.m_turnStrength_P1 = oldValue;
                 HoverCarControl.i.m_forwardAcl_P2 = oldValue2;
+                EffectManager.i.SetButton( true, false, true );
+                EffectManager.i.SetButton( false, true, true );
             } else {
                 HoverCarControl.i.m_turnStrength_P2 = oldValue;
                 HoverCarControl.i.m_forwardAcl_P1 = oldValue2;
+                EffectManager.i.SetButton( false, false, true );
+                EffectManager.i.SetButton( true, true, true );
             }
         }
     }
@@ -40,31 +48,47 @@ public class DisableButtonEffect : BoostEffect {
                 oldValue = HoverCarControl.i.m_forwardAcl_P1; //P1A1
                 HoverCarControl.i.m_forwardAcl_P1 = 0;
 
+                EffectManager.i.SetButton( true, true, false );
+
                 oldValue2 = HoverCarControl.i.m_turnStrength_P2; //P2A2
                 HoverCarControl.i.m_turnStrength_P2 = 0;
+
+                EffectManager.i.SetButton( false, false, false );
 
             } else {
                 oldValue = HoverCarControl.i.m_forwardAcl_P2; //P2A1
                 HoverCarControl.i.m_forwardAcl_P2 = 0;
 
-                oldValue2 = HoverCarControl.i.m_turnStrength_P1; //P1A1
+                EffectManager.i.SetButton( false, true, false );
+
+                oldValue2 = HoverCarControl.i.m_turnStrength_P1; //P1A2
                 HoverCarControl.i.m_turnStrength_P1 = 0;
+
+                EffectManager.i.SetButton( true, false, false );
             }
         } else {
             if ( player == 0 ) {
                 oldValue = HoverCarControl.i.m_turnStrength_P1; //P1A2
                 HoverCarControl.i.m_turnStrength_P1 = 0;
 
+                EffectManager.i.SetButton( true, false, false );
+
                 //P2A1
                 oldValue2 = HoverCarControl.i.m_forwardAcl_P2; //P2A1
                 HoverCarControl.i.m_forwardAcl_P2 = 0;
+
+                EffectManager.i.SetButton( false, true, false );
             } else {
                 oldValue = HoverCarControl.i.m_turnStrength_P2; //P2A2
                 HoverCarControl.i.m_turnStrength_P2 = 0;
 
+                EffectManager.i.SetButton( false, false, false );
+
                 //P1A1
                 oldValue2 = HoverCarControl.i.m_forwardAcl_P1; //P1A1
                 HoverCarControl.i.m_forwardAcl_P1 = 0;
+
+                EffectManager.i.SetButton( true, true, false );
             }
         }
 

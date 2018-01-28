@@ -55,10 +55,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5f1ec719ac2eb1a408219a368a872f20, type: 2}
   - {fileID: 11400000, guid: f8cd5348cf83add4b846ea600b6588dc, type: 2}
   - {fileID: 11400000, guid: 4c6cde279e5bfd64d99fb906f285e67e, type: 2}
+  - {fileID: 11400000, guid: 4dbaa41647568624cb166d87dff2f049, type: 2}
+  - {fileID: 11400000, guid: e5a69bc54b0b125408eb0557bed1804b, type: 2}
   PickUpEffects:
   - {fileID: 11400000, guid: 65d1b76314e289a4fbbc10cb116815f1, type: 2}
   - {fileID: 11400000, guid: bc57e384f25bb1842b6535991f0a559d, type: 2}
-  randomInterval: 5
+  randomInterval: 10
   CurrentEffect: {fileID: 0}
   CurrentPickupEffect: {fileID: 0}
   mainAudio: {fileID: 0}
+  P1Kaasu: {fileID: 0}
+  P2Kaasu: {fileID: 0}
+  P1Turn: {fileID: 0}
+  P2Turn: {fileID: 0}

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EffectManager : MonoBehaviour {
 
@@ -104,6 +105,28 @@ public class EffectManager : MonoBehaviour {
             iter = 0;
         } else {
             Invoke( "StartDistortion", 0.2f );
+        }
+    }
+
+    public GameObject P1Kaasu;
+    public GameObject P2Kaasu;
+
+    public GameObject P1Turn;
+    public GameObject P2Turn;
+
+    public void SetButton( bool p1, bool a1, bool on) {
+        if ( p1 ) {
+            if ( a1 ) {
+                P1Kaasu.SetActive( on );
+            } else {
+                P1Turn.SetActive( on );
+            }
+        } else {
+            if ( a1 ) {
+                P2Kaasu.SetActive( on );
+            } else {
+                P2Turn.SetActive( on );
+            }
         }
     }
 
