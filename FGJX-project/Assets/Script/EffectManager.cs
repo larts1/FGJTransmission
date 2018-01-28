@@ -26,10 +26,7 @@ public class EffectManager : MonoBehaviour {
     public void RandomEffect() {
         int rngEffectId = Random.Range(0, Effects.Count);
 
-        //if ( Effects.IndexOf( CurrentEffect ) == rngEffectId ) {
-        //    var nextID = Effects.IndexOf( CurrentEffect ) + 1;
-        //    rngEffectId = nextID == Effects.Count ? 0 : nextID;
-        //}
+        StartDistortion();
 
         while ( true ) {
             rngEffectId = Random.Range( 0, Effects.Count );
@@ -95,5 +92,14 @@ public class EffectManager : MonoBehaviour {
         } else {
             mainAudio.Play();
         }
+    }
+
+    void StartDistortion() {
+        FindObjectOfType<AlpacaSound.RetroPixel>().horizontalResolution = 64;
+        Invoke( "StopDistortion", 0.5f );
+    }
+
+    void StopDistortion() {
+        FindObjectOfType<AlpacaSound.RetroPixel>().horizontalResolution = 640;
     }
 }
