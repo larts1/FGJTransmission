@@ -4578,7 +4578,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -6114,7 +6114,7 @@ Prefab:
     - target: {fileID: 114543134613422580, guid: b01d423ead11f8f4b8114b3ba87954bd,
         type: 2}
       propertyPath: Effects.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4988535827014436, guid: b01d423ead11f8f4b8114b3ba87954bd, type: 2}
       propertyPath: m_LocalPosition.x
@@ -6168,8 +6168,14 @@ Prefab:
     - target: {fileID: 114543134613422580, guid: b01d423ead11f8f4b8114b3ba87954bd,
         type: 2}
       propertyPath: randomInterval
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114543134613422580, guid: b01d423ead11f8f4b8114b3ba87954bd,
+        type: 2}
+      propertyPath: Effects.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: e5a69bc54b0b125408eb0557bed1804b,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b01d423ead11f8f4b8114b3ba87954bd, type: 2}
   m_IsPrefabParent: 0
