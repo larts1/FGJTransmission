@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody))]
 public class HoverCarControl : MonoBehaviour
@@ -41,6 +42,7 @@ public class HoverCarControl : MonoBehaviour
     private bool flg1 = true;
 
     int[] ChkPoints = {0, 0, 0};
+    public Text winTxt;
 
     Vector3 OldPosition;
 
@@ -186,8 +188,7 @@ public class HoverCarControl : MonoBehaviour
             GameObject.FindGameObjectWithTag("Player").transform.position = OldPosition;
         }
         else if (other.gameObject.CompareTag("CheckPoint"))
-        {
-            
+        {       
             switch(other.gameObject.name)
             {
                 case "CheckPoint1":
@@ -202,17 +203,12 @@ public class HoverCarControl : MonoBehaviour
                         WinTxt();
                     break;    
             } 
-
-            foreach(int i in ChkPoints)
-            {
-                Debug.Log("Chk!"+i);
-            }
         } 
 
     }
     private void WinTxt()
     {
-        Debug.Log("YouWon!");
+        winTxt.text = "Your time was " + Time.time;
     }
     IEnumerator SavePLayerPosition()
     {
