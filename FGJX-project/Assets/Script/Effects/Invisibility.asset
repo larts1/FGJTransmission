@@ -11,5 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13bc6ef124d341c45b72eb4f1ba24df8, type: 3}
   m_Name: Invisibility
   m_EditorClassIdentifier: 
-  speedMultiplier: 2
-  animation: {fileID: 0}
+  chance: 1
+  Notification: {fileID: 1781212182499696, guid: cbde14608351c8c4580d633083b035d7,
+    type: 2}
