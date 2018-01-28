@@ -86,8 +86,8 @@ public class EffectManager : MonoBehaviour {
         CurrentPickupEffect.EndEffect();
     }
 
-    public void MuteMainAudio() {
-        if ( mainAudio.isPlaying ) {
+    public void MuteMainAudio( bool mute ) {
+        if ( mute ) {
             mainAudio.Pause();
         } else {
             mainAudio.Play();

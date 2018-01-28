@@ -14,7 +14,7 @@ public class SpeedMultiEffect : BoostEffect {
 
     public override void EndEffect() {
         Debug.Log( "End" );
-		EffectManager.i.MuteMainAudio ();
+		EffectManager.i.MuteMainAudio ( false );
         HoverCarControl.i.m_forwardAcl_P2 /= speedMultiplier;
         HoverCarControl.i.m_forwardAcl_P1 /= speedMultiplier;
 
@@ -27,7 +27,7 @@ public class SpeedMultiEffect : BoostEffect {
 
     public override void StartEffect() {
         Debug.Log( "Start" );
-		EffectManager.i.MuteMainAudio ();
+		EffectManager.i.MuteMainAudio ( true );
         HoverCarControl.i.m_forwardAcl_P2 *= speedMultiplier;
         HoverCarControl.i.m_forwardAcl_P1 *= speedMultiplier;
 

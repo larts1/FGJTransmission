@@ -56,14 +56,14 @@ public class DisableButtonEffect : BoostEffect {
                 HoverCarControl.i.m_turnStrength_P1 = 0;
 
                 //P2A1
-                oldValue = HoverCarControl.i.m_forwardAcl_P2; //P2A1
+                oldValue2 = HoverCarControl.i.m_forwardAcl_P2; //P2A1
                 HoverCarControl.i.m_forwardAcl_P2 = 0;
             } else {
                 oldValue = HoverCarControl.i.m_turnStrength_P2; //P2A2
                 HoverCarControl.i.m_turnStrength_P2 = 0;
 
                 //P1A1
-                oldValue = HoverCarControl.i.m_forwardAcl_P1; //P1A1
+                oldValue2 = HoverCarControl.i.m_forwardAcl_P1; //P1A1
                 HoverCarControl.i.m_forwardAcl_P1 = 0;
             }
         }
