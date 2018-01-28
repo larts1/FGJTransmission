@@ -94,6 +94,7 @@ public class EffectManager : MonoBehaviour {
         }
     }
 
+    int iter = 0;
     void StartDistortion() {
         FindObjectOfType<AlpacaSound.RetroPixel>().horizontalResolution = 640 / ( 30 - ( 10 * iter ) );
         FindObjectOfType<AlpacaSound.RetroPixel>().verticalResolution = 480 / ( 30 - ( 10 * iter++ ) );
@@ -106,9 +107,4 @@ public class EffectManager : MonoBehaviour {
         }
     }
 
-    int iter = 0;
-    void StopDistortion() {
-        FindObjectOfType<AlpacaSound.RetroPixel>().horizontalResolution = 640;
-        FindObjectOfType<AlpacaSound.RetroPixel>().horizontalResolution = 640;
-    }
 }
