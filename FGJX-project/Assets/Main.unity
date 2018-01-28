@@ -4574,7 +4574,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ed28a2417fc5e432b964981140171431, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f29c5c545a73945c58b2dd9b35ca7369, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -8558,6 +8558,7 @@ MonoBehaviour:
   - {fileID: 1322576685}
   left_boost: {fileID: 81322085}
   right_boost: {fileID: 1750487823}
+  flg2: 0
   winTxt: {fileID: 1422253518}
 --- !u!54 &1635886722
 Rigidbody:
@@ -10132,6 +10133,10 @@ Prefab:
       propertyPath: m_Name
       value: CheckPoint3
       objectReference: {fileID: 0}
+    - target: {fileID: 4085902914121456, guid: 1929eaaf9d29ed84d97d926f94e3ec8b, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1929eaaf9d29ed84d97d926f94e3ec8b, type: 2}
   m_IsPrefabParent: 0
@@ -10906,6 +10911,10 @@ Prefab:
       propertyPath: m_Size.y
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 4085902914121456, guid: 1929eaaf9d29ed84d97d926f94e3ec8b, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1929eaaf9d29ed84d97d926f94e3ec8b, type: 2}
   m_IsPrefabParent: 0
@@ -11042,6 +11051,10 @@ Prefab:
     - target: {fileID: 1111941464514880, guid: 1929eaaf9d29ed84d97d926f94e3ec8b, type: 2}
       propertyPath: m_Name
       value: CheckPoint1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4085902914121456, guid: 1929eaaf9d29ed84d97d926f94e3ec8b, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1929eaaf9d29ed84d97d926f94e3ec8b, type: 2}
