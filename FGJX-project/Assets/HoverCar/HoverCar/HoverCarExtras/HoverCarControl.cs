@@ -161,7 +161,7 @@ public class HoverCarControl : MonoBehaviour
                     else
                         Light2.SetActive(true);
                 }
-                lightState = lightState == 0 ? 0 : 1;
+                lightState = lightState == 0 ? 1 : 0;
             }
             
         }
