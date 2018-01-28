@@ -6441,6 +6441,11 @@ Prefab:
       propertyPath: P2Turn
       value: 
       objectReference: {fileID: 545297103}
+    - target: {fileID: 114543134613422580, guid: b01d423ead11f8f4b8114b3ba87954bd,
+        type: 2}
+      propertyPath: mainAudio
+      value: 
+      objectReference: {fileID: 988844840}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b01d423ead11f8f4b8114b3ba87954bd, type: 2}
   m_IsPrefabParent: 0
@@ -7537,6 +7542,7 @@ GameObject:
   - component: {fileID: 1422253517}
   - component: {fileID: 1422253519}
   - component: {fileID: 1422253518}
+  - component: {fileID: 1422253520}
   m_Layer: 5
   m_Name: winTxt
   m_TagString: Untagged
@@ -7574,7 +7580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9191176, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.8745099, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7583,7 +7589,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: f77d804e2a01d394cb28aff3b025865f, type: 3}
-    m_FontSize: 34
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -7601,6 +7607,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1422253516}
+--- !u!114 &1422253520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1422253516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.9843138, g: 0.16470589, b: 0.16078432, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1001 &1441126627
 Prefab:
   m_ObjectHideFlags: 0
