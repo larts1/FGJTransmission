@@ -9,10 +9,16 @@ public class InvisibilityEffect : BoostEffect
 
     GameObject win;
     GameObject shipRender;
+    GameObject[] antenna;
     public override void EndEffect()
     {
         shipRender = GameObject.Find("shipRender");
-        shipRender.gameObject.GetComponent<Renderer>().enabled = true;
+        shipRender.GetComponent<Renderer>().enabled = true;
+        antenna = GameObject.FindGameObjectsWithTag("Antenna");
+        for (int i = 0; i < antenna.Length; i++)
+        {
+            antenna[i].GetComponent<Renderer>().enabled = true;
+        }
 
         if ( win != null ) {
             Destroy( win );
@@ -22,7 +28,13 @@ public class InvisibilityEffect : BoostEffect
     public override void StartEffect()
     {
         shipRender = GameObject.Find("shipRender");
-        shipRender.gameObject.GetComponent<Renderer>().enabled = false;
+        shipRender.GetComponent<Renderer>().enabled = false;
+        antenna = GameObject.FindGameObjectsWithTag("Antenna");
+        for(int i=0; i< antenna.Length; i++)
+        {
+            antenna[i].GetComponent<Renderer>().enabled = false;
+        }
+        // antenna.SetActive(false);
 
         win = Instantiate( Notification );
     }
