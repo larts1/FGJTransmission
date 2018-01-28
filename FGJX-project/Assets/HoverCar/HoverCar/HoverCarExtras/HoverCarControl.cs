@@ -40,7 +40,12 @@ public class HoverCarControl : MonoBehaviour
 
     //flags
     private bool flg1 = true;
+    public bool flg2 = false;
 
+    GameObject Light1;
+    GameObject Light2;
+    int lightState = 0;
+    float iDontknowDontAsk = 0;
     int[] ChkPoints = {0, 0, 0};
     public Text winTxt;
 
@@ -54,7 +59,9 @@ public class HoverCarControl : MonoBehaviour
 
     void Start()
   {
-    m_body = GetComponent<Rigidbody>();
+        Light1 = GameObject.Find("left_light");
+        Light2 = GameObject.Find("right_light");
+        m_body = GetComponent<Rigidbody>();
 
     m_layerMask = 1 << LayerMask.NameToLayer("Characters");
     m_layerMask = ~m_layerMask;
@@ -134,9 +141,32 @@ public class HoverCarControl : MonoBehaviour
     {         
         flg1 = false;
         StartCoroutine(SavePLayerPosition());
-    }  
-    //  Hover Force
-    RaycastHit hit;
+    }
+    if (flg2)
+    {
+            if(iDontknowDontAsk < Time.time)
+            {
+                iDontknowDontAsk = Time.time + (float)0.25;
+                if (lightState % 2 == 0)
+                {
+                    if (Light1.activeSelf)
+                        Light1.SetActive(false);
+                    else
+                        Light1.SetActive(true);
+                }
+                else
+                {
+                    if (Light2.activeSelf)
+                        Light2.SetActive(false);
+                    else
+                        Light2.SetActive(true);
+                }
+                lightState = lightState == 0 ? 0 : 1;
+            }
+            
+        }
+        //  Hover Force
+        RaycastHit hit;
     for (int i = 0; i < HoverPointsGameObjects.Length; i++)
     {
       var hoverPoint = HoverPointsGameObjects [i];
