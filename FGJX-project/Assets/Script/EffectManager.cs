@@ -95,17 +95,20 @@ public class EffectManager : MonoBehaviour {
     }
 
     void StartDistortion() {
-        FindObjectOfType<AlpacaSound.RetroPixel>().horizontalResolution = 640 / ( 30 - ( 10 * iter++ ) );
+        FindObjectOfType<AlpacaSound.RetroPixel>().horizontalResolution = 640 / ( 30 - ( 10 * iter ) );
+        FindObjectOfType<AlpacaSound.RetroPixel>().verticalResolution = 480 / ( 30 - ( 10 * iter++ ) );
         if ( iter == 3 ) {
-            Invoke( "StopDistortion", 0.5f );
+            FindObjectOfType<AlpacaSound.RetroPixel>().horizontalResolution = 640;
+            FindObjectOfType<AlpacaSound.RetroPixel>().verticalResolution = 480;
             iter = 0;
         } else {
-            Invoke( "StartDistortion", 0.3f );
+            Invoke( "StartDistortion", 0.2f );
         }
     }
 
     int iter = 0;
     void StopDistortion() {
+        FindObjectOfType<AlpacaSound.RetroPixel>().horizontalResolution = 640;
         FindObjectOfType<AlpacaSound.RetroPixel>().horizontalResolution = 640;
     }
 }
