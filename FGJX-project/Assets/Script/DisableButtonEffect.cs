@@ -49,7 +49,7 @@ public class DisableButtonEffect : BoostEffect {
             }
         }
 
-        Instantiate( animation ).GetComponentInChildren<Text>().text = "Player" + player + "'s Controller broke!\n" + ( axel == 0 ? "Throttle disconnected" : "Turning disconnected" );
+        Instantiate(animation);
     }
 
 }
